@@ -1,0 +1,8 @@
+<% @posts.each do |post| %>
+<h2><%= post.title %></h2><br>
+<div><%= truncate(post.body, :length=> 150) %></div>
+
+<%= link_to "Read post", post %> <br>
+<%= link_to "Edit post", edit_post_path(post) %><br>
+<%= link_to "Delete Post", post_path(post), message: :delete,data:{confirm:"Are you sure?"} %>
+<% end %>
